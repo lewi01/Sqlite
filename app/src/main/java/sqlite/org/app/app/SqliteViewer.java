@@ -11,6 +11,7 @@ public class SqliteViewer extends JFrame {
          setSize(700, 700);
          setLocationRelativeTo(null);
          sqliteView();
+         sqlite();
          setLayout(null);
          setVisible(true);
      }
@@ -19,16 +20,30 @@ public class SqliteViewer extends JFrame {
         new SqliteViewer();
     }
     public void sqliteView(){
-         JTextField jTextField = new JFormattedTextField();
-         jTextField.setBounds(5,10,580,30);
-         Border border = BorderFactory.createLineBorder(Color.BLUE,1);
-         jTextField.setBorder(border);
-         add(jTextField);
-         JButton jButton = new JButton("Open");
-         jButton.setBounds(590,10,100,30);
+        JTextField jTextField = new JFormattedTextField();
+        jTextField.setBounds(5,10,580,30);
+        Border border = BorderFactory.createLineBorder(Color.BLUE,1);
+        jTextField.setBorder(border);
+        add(jTextField);
+        JButton jButton = new JButton("Open");
+        jButton.setBounds(590,10,100,30);
+        jButton.setBackground(Color.WHITE);
+        jButton.setBorder(new RoundBtn(8));
+        add(jButton);
+
+    }
+    public  void sqlite(){
+         JComboBox<String> jBox  = new JComboBox();
+         jBox.setBounds(5,50,680,30);
+         add(jBox);
+         JTextField textField = new JFormattedTextField();
+         textField.setBounds(5,100,580,60);
+         add(textField);
+         JButton jButton = new JButton("Execute");
+         jButton.setBounds(590,100,100,30);
          jButton.setBackground(Color.WHITE);
-         jButton.setBorder(new RoundBtn(8));
          add(jButton);
+
     }
 }
 class RoundBtn implements Border {
